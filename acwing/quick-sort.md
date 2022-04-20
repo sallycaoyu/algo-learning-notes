@@ -32,8 +32,8 @@
 
 ### - 双指针法
 1. 设一个指针i指向q[0]，j指向q[n-1]
-2. 从左侧遍历元素，只要i指向的元素<=x，i就右移，直到遇到一个>x的元素为止
-3. 从右侧遍历元素，只要j指向的元素>=x，j就左移，直到遇到一个<x的元素为止
+2. 从左侧遍历元素，只要i指向的元素<x，i就右移，直到遇到一个>=x的元素为止
+3. 从右侧遍历元素，只要j指向的元素>x，j就左移，直到遇到一个<=x的元素为止
 4. 如果i在的位置<j在的位置，交换i和j指向的元素
 5. 如果i<j，循环2-4
 5. 递归处理j及j左侧，和j右侧
@@ -87,8 +87,8 @@ Now we have:
 
 ### - Two pointers, in-place solution
 1. Set a pointer i pointing at q[0], a pointer j pointing at q[n-1]
-2. Iterate from the left, as long as the element i points at <= x, move i one step to the right
-3. Iterate from the left, as long as the element j points at >= x, move j
+2. Iterate from the left, as long as the element i points at < x, move i one step to the right
+3. Iterate from the left, as long as the element j points at > x, move j
 one step to the left
 4. If index of i < index of j, swap q[i] with q[j]
 5. Iterate step 2-4 as long as index of i < index of j
@@ -100,18 +100,40 @@ one step to the left
     # C++
     # include <iostream>
 
-    void quick_sort(int[] q, int l, int r)
+    const int N = 1e6 + 10;
+
+    int n;
+    int q[N];
+
+    void quick_sort(int q[], int l, int r)
     {
         if (l >= r) return;
         
         int i = l - 1, j = r + 1, x = q[l + r >> 1];
         while (i < j)
         {
-            do (i++); while (q[i] <= x);
-            do (j--); while (q[j] >= x);
-            if (i < j) swap(q[i], q[j]);
+            do (i++); while (q[i] < x);
+            do (j--); while (q[j] > x);
+            if (i < j) std::swap(q[i], q[j]);
         }
         quick_sort(q, l, j), quick_sort(q, j + 1, r);
     }
 
-
+    int main()
+    {
+        scanf("%d", &n);
+        
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%d", &q[i]);
+        }
+        
+        quick_sort(q, 0, n - 1);
+        
+        for (int j = 0; j < n; j++)
+        {
+            printf("%d ", q[j]);
+        }
+        
+        return 0;
+    }

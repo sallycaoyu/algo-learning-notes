@@ -110,13 +110,20 @@ one step to the left
         if (l >= r) return;
         
         int i = l - 1, j = r + 1, x = q[l + r >> 1];
+        
         while (i < j)
         {
             do (i++); while (q[i] < x);
             do (j--); while (q[j] > x);
             if (i < j) std::swap(q[i], q[j]);
         }
-        quick_sort(q, l, j), quick_sort(q, j + 1, r);
+        
+        quick_sort(q, l, j), quick_sort(q, j + 1, r); // when x != q[r]
+        
+        // Or do this when x != q[l]:
+        // quick_sort(q, l, i - 1), quick_sort(q, i, r);
+        
+        // Edge case e.g. q = [1, 2]
     }
 
     int main()
@@ -138,7 +145,9 @@ one step to the left
         return 0;
     }
 
-# 鸣谢 / Thanks to:
+
+
+# 鸣谢 Thanks to:
 y总的AcWing算法基础课：https://www.acwing.com/blog/content/277/
 
 梦开始的地方~

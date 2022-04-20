@@ -15,8 +15,8 @@
     - 右侧：q[r]
     - 随机位置
 2. 调整区间
-    - 把数组q里<=x的数字放在x左侧
-    - 把数组q里>=x的数字放在x右侧
+    - x左侧的元素<=x
+    - x右侧的元素>=x
 3. 递归处理左右两段
 <br></br>
 
@@ -69,8 +69,8 @@ Now we have:
     - a random position on q
 <br></br>
 2. Adjust the left and right sides
-    - put elements that <= x to the left side of x
-    - put elements that >= x to the right side of x
+    - elements on the left side of x are <= x
+    - elements on the right side of x are >= x
 <br></br>
 3. Recursively repeat the above steps for the left and right sides
 <br></br>

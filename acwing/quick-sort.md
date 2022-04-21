@@ -68,7 +68,7 @@ Now we have:
     - rightmost: q[r]
     - a random position on q
 <br></br>
-2. Adjust the left and right sides
+2. Adjust the left and right sides, so that:
     - elements on the left side of x are <= x
     - elements on the right side of x are >= x
 <br></br>

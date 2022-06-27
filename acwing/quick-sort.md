@@ -62,7 +62,7 @@ Now we have:
 
 ## Steps
 
-1. Determine a split point x from one of the following ways
+1. Determine a pivot x from one of the following ways
     - leftmost: q[l]
     - midpoint: q[(l+r)/2]
     - rightmost: q[r]
@@ -145,9 +145,7 @@ one step to the left
         return 0;
     }
 
-
-
-# 鸣谢 Thanks to:
-y总的AcWing算法基础课：https://www.acwing.com/blog/content/277/
-
-梦开始的地方~
+作者：yxc
+链接：https://www.acwing.com/blog/content/277/
+来源：AcWing
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

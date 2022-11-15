@@ -105,3 +105,37 @@ https://zhuanlan.zhihu.com/p/37331092
 https://blog.csdn.net/xiaorenwuzyh/article/details/44514815
 https://yosef-gao.github.io/2016/10/01/cpp-new/
 https://cloud.tencent.com/developer/article/1496771
+
+
+6. 指针常量和常量指针的区别
+指针常量：不能改变指向，但是能修改指向变量的值 （int *const p)
+常量指针：可以修改指向，但是不能修改指向变量的值 (const int *p, int const *p)
+
+资料来源：
+https://blog.csdn.net/qq_36132127/article/details/81940015
+
+
+7. Map和哈希Map的区别是什么？它们各自的使用场景是什么？
+1. map和hashmap的底层数据结构不同：map是红黑树实现的，而hashmap是用哈希表实现的
+2. map的优势是元素可以自动按照键值排序，查找的时间复杂度是O(log(n))。hashmap的优势是各项操作的时间复杂度接近O(1)。
+3. map属于STL标准的一部分，hashmap不是
+
+资料来源：
+https://weread.qq.com/web/reader/60c32ad0715a382160c9d1ck9bf32f301f9bf31c7ff0a60
+
+8. public, protected, private之间的区别
+一个类的public成员可以在整个程序的任何地方被访问到；
+一个类的protected成员只能被这个类本身和它的子类访问到；
+一个类的private成员只能被这个类内部的成员函数访问到
+
+
+9. 静态成员函数和普通成员函数的区别
+一个类的静态成员函数是被这个类的所有对象共享的，而不属于某一个对象，所以静态成员函数没有this指针，无法访问非静态的成员。
+而普通成员函数因为有this指针，所以既可以访问静态成员也可以访问非静态成员。
+
+资料来源：
+https://blog.csdn.net/qq_22238021/article/details/79546270
+
+
+
+
